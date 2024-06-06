@@ -20,8 +20,8 @@ history.AddSystemMessage("You are a useful assistant that replies using a direct
 // analize image
 var collectionItems = new ChatMessageContentItemCollection
 {
-    new TextContent("What's in the image? Tell me with a RPI prefix"),
-    new ImageContent(new Uri("https://github.com/elbruno/gpt4ol-sk-csharp/blob/main/imgs/rpi5.png?raw=true"))
+    new TextContent("What's in the image?"),
+    new ImageContent(new Uri("https://github.com/elbruno/gpt4ol-sk-csharp/blob/main/src/GPT4o_lab03/imgs/foggyday.png?raw=true"))
 };
 history.AddUserMessage(collectionItems);
 
