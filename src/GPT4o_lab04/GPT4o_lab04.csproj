@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>6897942c-7c8e-441d-92c6-4e95192ce4de</UserSecretsId>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Azure.Identity" Version="1.11.3" />
+		<PackageReference Include="Azure.Storage.Blobs" Version="12.20.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.0-preview.4.24266.19" />
+		<PackageReference Include="Microsoft.SemanticKernel" Version="1.14.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="imgs\foggyday.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="imgs\foggydaysmall.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="imgs\petsmusic.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="imgs\rpi5.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="imgs\ultrarunningmug.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
