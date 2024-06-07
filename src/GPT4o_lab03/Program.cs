@@ -19,12 +19,6 @@ history.AddSystemMessage("You are a useful assistant that replies using a direct
 
 var imageContent = new ImageContent();
 
-// use local image
-//var imageFile = "petsmusic.png";
-//var imageFullPath = Path.Combine(Directory.GetCurrentDirectory(), "imgs", imageFile);
-//imageContent.MimeType = "image/png";
-//imageContent.Data = File.ReadAllBytes(imageFullPath);
-
 // use remote image
 imageContent.Uri = new Uri("https://github.com/elbruno/gpt4ol-sk-csharp/blob/main/src/GPT4o_lab03/imgs/foggyday.png?raw=true");
 

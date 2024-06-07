@@ -50,7 +50,7 @@ Assistant assistant = assistantClient.CreateAssistant(
     model: model,
     new AssistantCreationOptions()
     {
-        Instructions = "You are a useful assistant that replies using a funny style."
+        Instructions = "You are a useful assistant that replies using a funny style and always in Spanish."
     });
 
 AssistantThread thread = assistantClient.CreateThread(new ThreadCreationOptions()

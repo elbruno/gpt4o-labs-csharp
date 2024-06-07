@@ -13,22 +13,42 @@ Before running the sample, ensure you have the following installed:
 - **OpenAI Key**: An OpenAI API key is required to authenticate and interact with the GPT-4o model.
 - **(Optional) Visual Studio or Visual Studio Code**: You will need an IDE or code editor capable of running .NET projects. Visual Studio or Visual Studio Code are recommended.
 
-## About the Sample
+## About the Samples
 
-This sample demonstrates the capabilities of the GPT-4o model by analyzing and describing an image. It utilizes the Semantic Kernel to process the image and generate a description using C#.
+The following samples demonstrates differnet capabilities of the GPT-4o model, in example: analyzing and describing an image. The samples uses the official OpenAI library for .NET and Semantic Kernel to process the image and generate a description using C#.
 
-## How to Run the Project
+Here is the list of projects:
+
+| Name | Category | Service | Description | Source |
+|------|------|------|-------------|--------|
+| GPT4o_lab01 | Semantic Kernel | OpenAI APIs | Chat sample analizing an image from a URL | `.\src\GPT4o_lab01` |
+| GPT4o_lab02 | Semantic Kernel | OpenAI APIs | Audio to text sample | `.\src\GPT4o_lab02` |
+| GPT4o_lab03 | Semantic Kernel | Azure OpenAI | Chat sample analizing an image from a URL | `.\src\GPT4o_lab03` |
+| GPT4o_lab04 | Semantic Kernel | Azure OpenAI | Upload an image to an zure Blob and then analizes the image from the blob URL. *Reference: [.NET and Azure Blobs](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-dotnet?WT.mc_id=academic-00000-brunocapuano)* | `.\src\GPT4o_lab04` |
+| OAINETSDK_lab01 | OpenAI library for .NET | OpenAI APIs | Chat sample asking questions to `GPT-4o` | `.\src\OAINETSDK_lab01` |
+| OAINETSDK_lab02 | OpenAI library for .NET | OpenAI APIs | Audio to text using `Whisper-1` | `.\src\OAINETSDK_lab02` |
+| OAINETSDK_lab03 | OpenAI library for .NET | OpenAI APIs | Chat sample analizing an image from a local file with `GPT-4o` | `.\src\OAINETSDK_lab03` |
+
+
+
+## Example: How to Run the Project
 
 To run the project, follow these steps:
 1. Clone the repository to your local machine.
 1. Open a terminal and enter your OpenAI Key with the following commands 
+
     ```bash
-    cd .\src\
+    cd .\src\GPT4o_lab01\
+
+    # init projecs user-secrets
     dotnet user-secrets init
+
+    # add OpenAI API Key
     dotnet user-secrets set "APIKEY" "OpenAI API KEY"
     ```
 
 1. Run the project with the command
+
     ```bash
     dotnet run
     ```
