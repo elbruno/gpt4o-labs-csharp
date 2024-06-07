@@ -10,7 +10,8 @@ Welcome to the GPT-4o Labs samples using C#. This repository contains a demo pro
 
 Before running the sample, ensure you have the following installed:
 - **.NET 8**: Make sure you have the latest version of .NET installed on your machine.
-- **OpenAI Key**: An OpenAI API key is required to authenticate and interact with the GPT-4o model.
+- **(Optional) OpenAI Key**: An OpenAI API key is required to authenticate and interact with the GPT-4o model.
+- **(Optional) Azure OpenAI Services**: A GPT-4o model deployed in [Azure OpenAI Services](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview?WT.mc_id=academic-00000-brunocapuano).
 - **(Optional) Visual Studio or Visual Studio Code**: You will need an IDE or code editor capable of running .NET projects. Visual Studio or Visual Studio Code are recommended.
 
 ## About the Samples
@@ -19,16 +20,23 @@ The following samples demonstrates differnet capabilities of the GPT-4o model, i
 
 Here is the list of projects:
 
-| Name | Category | Service | Description | Source |
-|------|------|------|-------------|--------|
-| GPT4o_lab01 | Semantic Kernel | OpenAI APIs | Chat sample analizing an image from a URL | `.\src\GPT4o_lab01` |
-| GPT4o_lab02 | Semantic Kernel | OpenAI APIs | Audio to text sample | `.\src\GPT4o_lab02` |
-| GPT4o_lab03 | Semantic Kernel | Azure OpenAI | Chat sample analizing an image from a URL | `.\src\GPT4o_lab03` |
-| GPT4o_lab04 | Semantic Kernel | Azure OpenAI | Upload an image to an zure Blob and then analizes the image from the blob URL. *Reference: [.NET and Azure Blobs](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-dotnet?WT.mc_id=academic-00000-brunocapuano)* | `.\src\GPT4o_lab04` |
-| OAINETSDK_lab01 | OpenAI library for .NET | OpenAI APIs | Chat sample asking questions to `GPT-4o` | `.\src\OAINETSDK_lab01` |
-| OAINETSDK_lab02 | OpenAI library for .NET | OpenAI APIs | Audio to text using `Whisper-1` | `.\src\OAINETSDK_lab02` |
-| OAINETSDK_lab03 | OpenAI library for .NET | OpenAI APIs | Chat sample analizing an image from a local file with `GPT-4o` | `.\src\OAINETSDK_lab03` |
+### OpenAI APIs
 
+| Category | Name | Description | Source |
+|------|------|-------------|--------|
+| Semantic Kernel | GPT4o_lab01 | Chat sample analizing an image from a URL | `.\src\GPT4o_lab01` |
+| Semantic Kernel | GPT4o_lab02 | Audio to text sample | `.\src\GPT4o_lab02` |
+| OpenAI library for .NET | OAINETSDK_lab01 | Chat sample asking questions to `GPT-4o` | `.\src\OAINETSDK_lab01` |
+| OpenAI library for .NET | OAINETSDK_lab02 | Audio to text using `Whisper-1` | `.\src\OAINETSDK_lab02` |
+| OpenAI library for .NET | OAINETSDK_lab03 | Chat sample analizing an image from a local file with `GPT-4o` | `.\src\OAINETSDK_lab03` |
+
+### Azure OpenAI Services
+
+
+| Category | Name | Description | Source |
+|------|------|-------------|--------|
+| Semantic Kernel | GPT4o_AOAI_lab01 | Chat sample analizing an image from a URL | `.\src\GPT4o_AOAI_lab01` |
+| Semantic Kernel | GPT4o_AOAI_lab01 | Upload an image to an Azure Blob and then analizes the image from the blob URL. | `.\src\GPT4o_AOAI_lab01` |
 
 
 ## Example: How to Run the Project
@@ -63,51 +71,12 @@ To run the project, follow these steps:
 
 
 
-## Use another image
 
-In order to test the project with another image, edit the `program.cs` file.
+## References
 
-In example, using this new image
-
-![Bruno Standing in a podium](/imgs/rpi5.png)
-
-And updating the code
-
-```csharp
-var collectionItems= new ChatMessageContentItemCollection
-{
-    new TextContent("What's in the image?"),
-    new ImageContent(new Uri("https://github.com/elbruno/gpt4ol-sk-csharp/blob/main/imgs/rpi5.png?raw=true"))
-};
-history.AddUserMessage(collectionItems);
-```
-
-We get an output similar to this one:
-
-    The image appears to be a screenshot of a terminal window running on a Raspberry Pi device. The user has executed the `neofetch` command with `sudo`, and the terminal displayed system information. Additionally, the `ollama list` command was executed, showing a list of local models.
-
-    Here's the breakdown of the terminal output:
-
-    ### System Information (Neofetch Output)
-    - **OS:** Debian GNU/Linux 12 (bookworm) aarch64
-    - **Host:** Raspberry Pi 5 Model B Rev 1.0
-    - **Kernel:** 6.6.20+rpt-rpi-2712
-    - **Uptime:** 3 mins
-    - **Packages:** 694 (dpkg)
-    - **Shell:** bash 5.2.15
-    - **CPU:** 4 cores @ 2.400GHz
-    - **Memory:** 640MiB / 8052MiB
-
-    ### Models List (Ollama List Command Output)
-    - **llama3:latest**
-    - **ID:** 71a106a91016
-    - **Size:** 4.7 GB
-    - **Modified:** 4 days ago
-    - **phi3:latest**
-    - **ID:** a2c89ceaed85
-    - **Size:** 2.3 GB
-    - **Modified:** 3 days ago
-
+- [Announcing the official OpenAI library for .NET](https://devblogs.microsoft.com/dotnet/openai-dotnet-library/?WT.mc_id=academic-00000-brunocapuano)
+- [What is Azure OpenAI Service?](https://learn.microsoft.com/en-us/azure/ai-services/openai/overview?WT.mc_id=academic-00000-brunocapuano)
+- [Quickstart: Azure Blob Storage client library for .NET](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-dotnet?WT.mc_id=academic-00000-brunocapuano)
 
 ## Author
 
