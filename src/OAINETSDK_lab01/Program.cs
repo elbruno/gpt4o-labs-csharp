@@ -6,7 +6,7 @@ var openAIKey = config["APIKEY"];
 var model = "gpt-4o";
 
 // chat client
-ChatClient client = new(model: model, openAIKey);
+ChatClient client = new(model, openAIKey);
 
 // define system message
 var systemMessage = new SystemChatMessage("You are a useful assitant that replies using a funny style.");

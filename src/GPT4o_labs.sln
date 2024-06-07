@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPT4o_lab04", "GPT4o_lab04\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAINETSDK_lab01", "OAINETSDK_lab01\OAINETSDK_lab01.csproj", "{3D3DCAEC-CCB6-44C5-BF84-F154DE846A22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAINETSDK_lab02", "OAINETSDK_lab02\OAINETSDK_lab02.csproj", "{1F12B9CC-BF7D-40DB-A831-98B7FB11B331}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{3D3DCAEC-CCB6-44C5-BF84-F154DE846A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D3DCAEC-CCB6-44C5-BF84-F154DE846A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D3DCAEC-CCB6-44C5-BF84-F154DE846A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F12B9CC-BF7D-40DB-A831-98B7FB11B331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F12B9CC-BF7D-40DB-A831-98B7FB11B331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F12B9CC-BF7D-40DB-A831-98B7FB11B331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F12B9CC-BF7D-40DB-A831-98B7FB11B331}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
