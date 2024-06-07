@@ -23,31 +23,58 @@
 //    THE SOFTWARE.
 
 using Microsoft.Extensions.Configuration;
+using OpenAI;
+using OpenAI.Assistants;
 using OpenAI.Chat;
+using OpenAI.Files;
+using System.ClientModel;
+
+#pragma warning disable OPENAI001
 
 var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
 var openAIKey = config["APIKEY"];
 var model = "gpt-4o";
 
-// chat client
-ChatClient client = new(model, openAIKey);
+OpenAIClient openAIClient = new(openAIKey);
+FileClient fileClient = openAIClient.GetFileClient();
+var assistantClient = openAIClient.GetAssistantClient();
 
-// define system message
-var systemMessage = new SystemChatMessage("You are a useful assitant that replies using a funny style.");
-var userQ = new UserChatMessage("What is the capital of France?");
-var messages = new List<ChatMessage>
+
+var imageFile = "foggyday.png";
+var imageFullPath = Path.Combine(Directory.GetCurrentDirectory(), "imgs", imageFile);
+OpenAIFileInfo imgFile = fileClient.UploadFile(imageFullPath, FileUploadPurpose.Vision);
+
+var imageMessage = MessageContent.FromImageFileId(imgFile.Id);
+
+Assistant assistant = assistantClient.CreateAssistant(
+    model: model,
+    new AssistantCreationOptions()
+    {
+        Instructions = "You are a useful assistant that replies using a funny style."
+    });
+
+AssistantThread thread = assistantClient.CreateThread(new ThreadCreationOptions()
 {
-    systemMessage,
-    userQ
-};
+    InitialMessages =
+    {
+        new ThreadInitializationMessage(
+        [
+            "Hello, assistant! Please describe this image for me:",
+            MessageContent.FromImageFileId(imgFile.Id)
+        ]),
+    }
+});
 
-// run the chat
-ChatCompletion chatCompletion = client.CompleteChat(messages);
-var response = chatCompletion.Content[^1].Text;
+var streamingUpdates = assistantClient.CreateRunStreaming(thread,assistant);
 
-// show the original question and the chat response in the console
-Console.WriteLine($@"System Prompt: {systemMessage.Content[^1].Text}
-
-User Question: {userQ.Content[^1].Text}
-
-Response: {response}");
+foreach (StreamingUpdate streamingUpdate in streamingUpdates)
+{
+    if (streamingUpdate.UpdateKind == StreamingUpdateReason.RunCreated)
+    {
+        Console.WriteLine($"--- Run started! ---");
+    }
+    if (streamingUpdate is MessageContentUpdate contentUpdate)
+    {
+        Console.Write(contentUpdate.Text);
+    }
+}
