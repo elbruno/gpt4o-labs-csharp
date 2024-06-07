@@ -1,10 +1,10 @@
-# GPT-4o Semantic Kernel Sample with C#
+# GPT-4o Labs Sample with C#
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](/LICENSE)
 [![Twitter: elbruno](https://img.shields.io/twitter/follow/elbruno.svg?style=social)](https://twitter.com/elbruno)
 ![GitHub: elbruno](https://img.shields.io/github/followers/elbruno?style=social)
 
-Welcome to the GPT-4o Semantic Kernel sample using C#. This repository contains a demo project that showcases how to integrate the powerful GPT-4o model with the Semantic Kernel in a .NET environment.
+Welcome to the GPT-4o Labs samples using C#. This repository contains a demo projects that showcases how to integrate the powerful GPT-4o model with the new OpenAI Library for .NET and Semantic Kernel in a .NET environment.
 
 ## Prerequisites
 
