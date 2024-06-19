@@ -36,7 +36,7 @@ Here is the list of projects:
 | Category | Name | Description | Source |
 |------|------|-------------|--------|
 | Semantic Kernel | GPT4o_AOAI_lab01 | Chat sample analizing an image from a URL | `.\src\GPT4o_AOAI_lab01` |
-| Semantic Kernel | GPT4o_AOAI_lab01 | Upload an image to an Azure Blob and then analizes the image from the blob URL. | `.\src\GPT4o_AOAI_lab01` |
+| Semantic Kernel | GPT4o_AOAI_lab02 | Upload an image to an Azure Blob and then analizes the image from the blob URL. | `.\src\GPT4o_AOAI_lab02` |
 
 
 ## Example: How to Run the Project
